@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/logo(32x32).png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="description" />
+    <title>Genshin To-do list</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="animation">
+        <img
+          src="/images/animation.gif"
+          alt="animation"
+          class="animation__image"
+        />
+        <div class="animation__block">
+          <h2 class="animation-block__text">Привет Ромчик, рад тебя видеть!</h2>
+        </div>
+      </div>
+      <div class="hero">
+        <img src="images/todo-bgimage.png" alt="" class="img__hero" />
+        <h1 class="hero__title">To-do list for freya</h1>
+        <ul class="hero__list">
+          <li class="hero-list__item">
+            Открыть сундучок!
+            <button class="hero-list__btn"></button>
+          </li>
+          <li class="hero-list__item">
+            Сделать дейлики!
+            <button class="hero-list__btn"></button>
+          </li>
+        </ul>
+        <form class="hero__form">
+          <input
+            placeholder="Поле для ввода задач!"
+            type="text"
+            class="hero__input"
+          />
+          <button type="submit" class="hero-form__button">
+            Добавить задачу!
+          </button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

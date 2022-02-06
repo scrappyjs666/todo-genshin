@@ -1,0 +1,169 @@
+/* стили элементов, блоков, которые повторяются на разных страницах */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+body {
+  background: url(/images/mainbg.jpg) no-repeat;
+  background-size: cover;
+  position: fixed;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  overflow-y: scroll;
+}
+
+.animation {
+  position: relative;
+}
+
+.animation__block {
+  width: 250px;
+  height: 250px;
+  background: url(/images/pop__up.png) no-repeat;
+  position: absolute;
+  top: -8%;
+  left: 15%;
+}
+
+.animation-block__text {
+  position: absolute;
+  top: 37%;
+  left: 35%;
+  font-size: 12px;
+  max-width: 85px;
+  line-height: 1.2;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-style: italic;
+  font-weight: 100;
+  user-select: none;
+}
+
+.hero {
+  width: 517px;
+  height: 701px;
+  box-shadow: 1px 1px 20px 20px #3e8bb7;
+  border-radius: 25px;
+  position: absolute;
+  left: 65%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+.img__hero {
+  border-radius: 25px;
+  opacity: 0.4;
+  position: relative;
+}
+
+.hero__title {
+  position: absolute;
+  top: 1%;
+  left: 25%;
+  font-family: 'Lobster', cursive;
+  font-style: italic;
+  font-weight: 100;
+  color: #aff1db;
+  user-select: none;
+}
+
+.hero__list {
+  position: absolute;
+  top: 10%;
+  left: 1%;
+}
+
+
+.hero-list__item {
+  display: flex;
+  font-family: 'Lobster', cursive;
+  font-style: italic;
+  font-weight: 100;
+  color: #aff1db;
+  font-size: 20px;
+  user-select: none;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.hero-list__item:nth-child(even)  {
+  &::before {
+  content: url('/images/mora.png');
+  }
+}
+
+.hero-list__item:nth-child(odd)  {
+  &::before {
+  content: url('/images/primogem.png');
+  }
+}
+
+.hero__form {
+  display: flex;
+  justify-content: space-between;
+  height:20px;
+  position: absolute;
+  left: 50%;
+  top: 95%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.hero__input {
+  border-radius: 10px;
+  width: 200px;
+  font-family: 'Lobster', cursive;
+  font-style: italic;
+  font-weight: 100;
+  color: #787575;
+  font-size: 14px;
+  text-align: center;
+  background: #acdbf7;
+  border: none;
+  box-shadow: 1px 1px 10px 5px beige;
+}
+
+.hero-form__button {
+  max-width:130px;
+  font-size: 14px;
+  font-family: 'Lobster', cursive;
+  font-style: italic;
+  font-weight: 100;
+  color: #787575;
+  text-align: center;
+  border: none;
+  background: #acdbf7;
+  box-shadow: 1px 1px 10px 5px beige;
+  border-radius: 10px;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+
+.hero-list__btn {
+  margin-left: 20px;
+}
+
+.hero-list__btn {
+  background: url(/images/symbol-delete.png);
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  border: none;
+  align-self: center;
+}
