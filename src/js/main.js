@@ -30,58 +30,26 @@ animation.addEventListener('click', function() {
 });
 
 
-//form newtask
-form.addEventListener('submit', formhandler);
+// task display
 
-function formhandler(event) {
-  event.preventDefault();
-  const taskText = hero__input.value;
-  const newli = document.createElement('li');
-  newli.innerText = taskText;
-  hero__list.append(newli);
 
-  const newbtn = document.createElement('button');
-  newli.append(newbtn);
-  newli.className = listyle;
-  newbtn.className = btnstyle; 
+
+const resultinputvalue = function() {
+  const resultinput = hero__input.value;
+  console.log(resultinput)
+};
+formbtn.addEventListener('click', resultinputvalue);
+
+
+
+
+function makeUser(resultinputvalue) {
+  return {
+    const resultinputvalue1 = resultinputvalue;
+  };
 }
 
-
-
-// btn__hero.forEach(btn__hero => {
-//   btn__hero.addEventListener('click', function(){
-//     btn__hero.remove();
-//     listitemdelete();
-//   })
-// })
-
-// function listitemdelete() {
-//   listitem.forEach(listitem => {
-//   listitem.addEventListener('click', function(){
-//     listitem.remove();
-//   })
-// })
-// };
-
-let targetli = (event) => {
-    const removeItems = event.target;
-    console.log(removeItems);
-    if (event.target.matches(".hero-list__btn")) {
-        removeItems.remove();
-    } 
-}
-hero__list.addEventListener('click', targetli);
-
-
-// listitem.forEach(listitem => {
-//   listitem.addEventListener('click', function(){
-//     alert('1');
-//   })
-// })
-
-
-
-
+animation.addEventListener('click', makeUser);
 
 
 

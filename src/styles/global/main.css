@@ -20,6 +20,7 @@ body {
 
 .animation {
   position: relative;
+  user-select: none;
 }
 
 .animation__block {
@@ -29,6 +30,10 @@ body {
   position: absolute;
   top: -8%;
   left: 15%;
+}
+
+.animation__image {
+  pointer-events: none;
 }
 
 .animation-block__text {
@@ -65,6 +70,8 @@ body {
   border-radius: 25px;
   opacity: 0.4;
   position: relative;
+  user-select: none;
+  pointer-events: none;
 }
 
 .hero__title {
