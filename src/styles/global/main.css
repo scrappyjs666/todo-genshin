@@ -15,7 +15,6 @@ body {
   position: fixed;
   left: 0; right: 0;
   top: 0; bottom: 0;
-  overflow-y: scroll;
 }
 
 .animation {
@@ -48,6 +47,24 @@ body {
   user-select: none;
 }
 
+.link__hero {
+  position: absolute;
+  top: 10%;
+  left: 75%;
+  font-family: 'Lobster', cursive;
+  font-style: italic;
+  font-weight: 100;
+  color: #df2815;
+  user-select: none;
+  font-size: 30px;
+  transition: .2s;
+  &:hover {
+    padding-bottom: 1px;
+    border-bottom: 3px solid  #df2815;
+    border-radius: 3px;
+  }
+}
+
 
 .hero {
   width: 517px;
@@ -72,8 +89,8 @@ body {
   align-items: center;
   justify-items: center;
   grid-template-rows: repeat(5, 1fr);
-  width: 110px;
-  height: 701px;
+  width: 120px;
+  height: 706px;
   border-radius: 25px;
   position: absolute;
   left: -12%;
@@ -207,24 +224,32 @@ body {
 }
 
 .swiper-container {
+  padding:5px 10px;
   overflow: hidden;
 }
 
-.hui{
-     width: calc(100% + 30px); 
-    padding: 0 15px; 
-    margin-left: -15px; 
-    overflow: hidden; 
-}
+
     
 .swiper-button-prev {
-  top: -3%;
-  left: -14%;
-  transform: rotate(90deg);
+  background: url(/images/arrow.swipper.btn.png);
+  top: -5%;
+  left: -16%;
+  transform: rotate(270deg);
+  width: 45px;
+  height: 64px;
+    &:after {
+  display: none;
+}
 }
 
 .swiper-button-next {
-  top: 103%;
+  background: url(/images/arrow.swipper.btn.png);
+  top: 102%;
+  left: -16%;
   transform: rotate(90deg);
-  left: -14%;
+  width: 45px;
+  height: 64px;
+  &:after {
+  display: none;
+}
 }
