@@ -131,6 +131,8 @@ btn__hero.forEach(function(item) {
 listitem.forEach(listitem => {
   listitem.addEventListener('click', function() {
     listitem.classList.toggle('textdecor');
+    todoList.push(listitem);
+    hero__list.appendChild(listitem);
   })
 })
 
