@@ -62,11 +62,15 @@ animation__image.addEventListener('click', function() {
 let todoList = [];
 function createItem() {
   const todoText = hero__input.value;
-  if (todoText.length >= 1 && todoList.length <= 10) {
+  if (todoText.length >= 1 && todoText.length < 40 && todoList.length <= 10) {
     todoList.unshift(todoText);
     hero__input.value = "";
     localStorage.setItem("todoList", JSON.stringify(todoList));
     renderTodo();
+  } else if(todoText.length >= 40) {
+    animationtext.innerHTML = 'Сильно длинная задача!';
+    animationtext.style.color = '#ff0000';
+    animationtext.style.fontSize = '13px';
   } else if(todoText.length >= 1) {
     animationtext.innerHTML = '10 задач - максимальное количество!';
     animationtext.style.color = '#ff0000';
