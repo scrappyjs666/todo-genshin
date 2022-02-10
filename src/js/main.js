@@ -22,6 +22,7 @@ let mySwiper = new Swiper('.swiper-container', {
 
 
 
+//global const
 const animation = document.querySelector('.animation');
 const animationtext = document.querySelector('.animation-block__text');
 const animation__image = document.querySelector('.animation__image');
@@ -88,7 +89,6 @@ function renderTodo() {
     itemButton.classList.add("hero-list__btn");
     item.addEventListener("click", (event) => {
       item.classList.toggle('textdecor');
-      todoList.push(item);
       hero__list.appendChild(item);
     });
     
@@ -122,8 +122,9 @@ if (localStorage.getItem("todoList")) {
 
 //delete default task
 btn__hero.forEach(function(item) {
-    item.addEventListener("click", function(){
+    item.addEventListener("click", function(event){
       item.parentNode.parentNode.removeChild(item.parentNode);
+      event.stopPropagation();
     });
 });
 
@@ -132,21 +133,27 @@ listitem.forEach(listitem => {
   listitem.addEventListener('click', function() {
     listitem.classList.toggle('textdecor');
     todoList.push(listitem);
-    hero__list.appendChild(listitem);
+    hero__list.append(listitem);
   })
 })
 
 
-
-//changed background task container
+//bgimage after reload  page
 const bgimage = document.querySelectorAll('.bg__image');
 
 const changebg = (event) => {
   let bgitem = (event.target.src);
   console.log(bgitem);
   img__hero.setAttribute('src', bgitem);
+  localStorage.setItem("bgitem", JSON.stringify(bgitem));
 }
 
 bgimage.forEach(bgimage => {
   bgimage.addEventListener('click', changebg);
 })
+
+if (localStorage.getItem("bgitem")) {
+  const bgitem = JSON.parse(localStorage.getItem("bgitem"));
+  console.log(bgitem);
+  img__hero.setAttribute('src', bgitem);
+}
