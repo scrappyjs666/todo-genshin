@@ -69,15 +69,15 @@ function createItem() {
     renderTodo();
   } else if(todoText.length >= 40) {
     animationtext.innerHTML = 'Сильно длинная задача!';
-    animationtext.style.color = '#ff0000';
+    animationtext.style.color = '#b22222';
     animationtext.style.fontSize = '13px';
   } else if(todoText.length >= 1) {
     animationtext.innerHTML = '10 задач - максимальное количество!';
-    animationtext.style.color = '#ff0000';
+    animationtext.style.color = '#b22222';
     animationtext.style.fontSize = '12px';
   } else if(todoList.length <= 10) {
     animationtext.innerHTML = 'Введи какой-нибудь символ!';
-    animationtext.style.color = '#ff0000';
+    animationtext.style.color = '#b22222';
     animationtext.style.fontSize = '13px';
   }
   hero__input.focus();
@@ -92,15 +92,21 @@ function renderTodo() {
     item.innerText = text;
     itemButton.classList.add("hero-list__btn");
     item.addEventListener("click", (event) => {
+      console.log(event.target)
       item.classList.toggle('textdecor');
       hero__list.appendChild(item);
     });
     
     itemButton.addEventListener("click", (event) => {
-      todoList.splice(index, 1);
-      localStorage.setItem("todoList", JSON.stringify(todoList));
+      let removeitem = event.target.parentNode
+      let removeitemText = removeitem.innerText
+      todoList.forEach(i => {
+      if(i === removeitemText)
+      {todoList.splice(todoList.indexOf(i), 1)}
+      removeitem.remove();
+      })
       event.stopPropagation();
-      renderTodo();
+      localStorage.setItem("todoList", JSON.stringify(todoList));
     });
     item.appendChild(itemButton);
     hero__list.appendChild(item);
@@ -136,7 +142,6 @@ btn__hero.forEach(function(item) {
 listitem.forEach(listitem => {
   listitem.addEventListener('click', function() {
     listitem.classList.toggle('textdecor');
-    todoList.push(listitem);
     hero__list.append(listitem);
   })
 })
